@@ -7,11 +7,12 @@ import (
 	"go/format"
 	"go/parser"
 	"go/token"
-	"golang.org/x/tools/go/ast/astutil"
 	"io/fs"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"golang.org/x/tools/go/ast/astutil"
 )
 
 /**
@@ -21,7 +22,7 @@ import (
 @description:
 **/
 
-const _defaultImport = "github.com/toheart/goanalysis/pkg/functrace"
+const _defaultImport = "github.com/oabnew/goanalysis/pkg/functrace"
 
 var debug = false
 

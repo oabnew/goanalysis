@@ -3,12 +3,13 @@ package functrace
 import (
 	"bytes"
 	"fmt"
-	"gopkg.in/natefinch/lumberjack.v2"
 	"log/slog"
 	"reflect"
 	"runtime"
 	"strconv"
 	"sync"
+
+	"gopkg.in/natefinch/lumberjack.v2"
 )
 
 /*

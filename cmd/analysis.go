@@ -6,9 +6,10 @@ package cmd
 import (
 	"errors"
 	"fmt"
-	"github.com/spf13/cobra"
-	"github.com/toheart/goanalysis/pkg/analysis"
 	"log"
+
+	"github.com/oabnew/goanalysis/pkg/analysis"
+	"github.com/spf13/cobra"
 )
 
 var (
