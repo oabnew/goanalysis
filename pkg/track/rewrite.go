@@ -64,7 +64,7 @@ func RewriteDir(dir string) {
 
 func NewRewrite(fullPath string) (*Rewrite, error) {
 	fset := token.NewFileSet()
-	f, err := parser.ParseFile(fset, fullPath, nil, 0)
+	f, err := parser.ParseFile(fset, fullPath, nil, parser.ParseComments)
 	if err != nil {
 		return nil, err
 	}
@@ -87,6 +87,9 @@ func (r *Rewrite) genTraceParams(funcType *ast.FuncType) []ast.Expr {
 	var params []string
 	for _, item := range funcType.Params.List {
 		for _, j := range item.Names {
+			if j.Name == "_" {
+				continue
+			}
 			params = append(params, j.Name)
 		}
 	}

@@ -80,7 +80,7 @@ func (t *TraceInstance) enterTrace(id uint64, name string, params []interface{})
 			output += fmt.Sprintf("#%d: %s, ", i, val.String())
 		case reflect.Ptr, reflect.Interface:
 			// 如果值是指针或接口，尝试解引用
-			output += fmt.Sprintf("#%d: %+v, ", i, item)
+			output += fmt.Sprintf("#%d: %T, ", i, item)
 		case reflect.Int:
 		case reflect.Int8:
 		case reflect.Int16:
@@ -98,7 +98,7 @@ func (t *TraceInstance) enterTrace(id uint64, name string, params []interface{})
 		case reflect.Uintptr:
 
 		default:
-			output += fmt.Sprintf("#%d: %s, ", i, item)
+			output += fmt.Sprintf("#%d: %T, ", i, item)
 		}
 	}
 	t.log.Info(fmt.Sprintf("%s->%s", indents, name), "gid", id, "params", output)
